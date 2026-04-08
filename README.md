@@ -48,22 +48,28 @@ ubuntu
 su -c ubuntu
 ```
 
-🔧 First-Time Setup (WAJIB!)
+## 🔧 First-Time Setup (WAJIB!)
 Saat pertama kali masuk ke Ubuntu, sistem lu belum punya akses internet dan folder temporary-nya masih terkunci. Jalankan command di bawah ini secara berurutan:
-1. Fix Internet & DNS Android:
+**1. Fix Internet & DNS Android:**
+```
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 groupadd -g 3003 aid_inet
 usermod -aG aid_inet root
 usermod -aG aid_inet _apt
-2. Fix Permission /tmp & GPG Error:
+```
+**2. Fix Permission /tmp & GPG Error:**
+```
 mkdir -p /tmp
 mkdir -p /var/tmp
 chmod 1777 /tmp
 chmod 1777 /var/tmp
-3. Update Repository
+```
+**3. Update Repository**
+```
 apt update
 apt upgrade -y
+```
 
 🚪 Cara Keluar
 Untuk kembali ke terminal Android biasa, cukup ketik:
