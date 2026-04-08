@@ -24,13 +24,11 @@ Didesain **100% systemless**, artinya nggak akan ngerusak partisi sistem bawaan 
 ---
 
 ## 🛠️ Cara Instalasi
-1. Download template zip module Magisk.
-2. Siapkan file rootfs Ubuntu arm64, pastikan namanya **`rootfs.tar.gz`**.
-3. Masukkan file `rootfs.tar.gz` tersebut ke dalam root folder zip module (sejajar dengan `module.prop`).
-4. Buka aplikasi Magisk / KernelSU.
-5. Pilih menu **Modules** -> **Install from storage**.
-6. Pilih zip module tersebut dan tunggu proses ekstrak selesai.
-7. **Reboot** HP lu.
+1. Download zip module Magisk.
+2. Buka menu aplikasi magisk/kernelsu
+3. Pilih menu **Modules** -> **Install from storage**.
+4. Pilih zip module tersebut dan tunggu proses ekstrak selesai.
+5. **Reboot**.
 
 ---
 
