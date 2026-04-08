@@ -1,0 +1,40 @@
+#!/system/bin/sh
+# Wrapper buat masuk ke Ubuntu Chroot
+
+UBUNTU_DIR="/data/local/ubuntu"
+
+# Cek apakah rootfs beneran ada
+if [ ! -d "$UBUNTU_DIR/bin" ]; then
+    echo "Error: Rootfs Ubuntu ga ketemu di $UBUNTU_DIR!"
+    exit 1
+fi
+
+# Fungsi buat mount folder system Android ke dalem Ubuntu
+mount_if_needed() {
+    if ! grep -q "$UBUNTU_DIR/$1" /proc/mounts; then
+        mount -o bind "/$1" "$UBUNTU_DIR/$1"
+    fi
+}
+
+# Mount partisi penting Android biar network & hardware kebaca
+mount_if_needed "dev"
+mount_if_needed "proc"
+mount_if_needed "sys"
+mount_if_needed "dev/pts"
+
+# Mount internal storage HP biar lu bisa akses file Android dari dalem Ubuntu
+if [ ! -d "$UBUNTU_DIR/sdcard" ]; then
+    mkdir -p "$UBUNTU_DIR/sdcard"
+fi
+mount_if_needed "sdcard"
+
+# Set environment variables Linux
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+export HOME=/root
+export USER=root
+export TERM=$TERM
+
+echo "Welcome to Systemless Ubuntu, bre! :v"
+
+# Eksekusi chroot login sebagai root
+chroot "$UBUNTU_DIR" /bin/su -

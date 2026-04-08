@@ -1,0 +1,6 @@
+id=ubuntu_chroot
+name=Systemless Ubuntu Chroot
+version=v1.0
+versionCode=1
+author=Lu x Gemini
+description=Jalanin Ubuntu chroot systemless dari terminal mana aja via command 'ubuntu'.
