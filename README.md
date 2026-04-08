@@ -17,18 +17,18 @@ Didesain **100% systemless**, artinya nggak akan ngerusak partisi sistem bawaan 
 
 ## 📋 Persyaratan
 1. HP Rooted (Magisk atau KernelSU).
-2. File **Ubuntu Rootfs ARM64** (format `.tar.gz`).
+2. File Ubuntu-magisk.zip
 3. Aplikasi Terminal (Termux sangat disarankan).
 4. Sisa penyimpanan internal minimal 2-3 GB.
 
 ---
 
 ## 🛠️ Cara Instalasi
-1. Download zip module Magisk.
+1. Download zip module Ubuntu-magisk.zip
 2. Buka menu aplikasi magisk/kernelsu
-3. Pilih menu **Modules** -> **Install from storage**.
-4. Pilih zip module tersebut dan tunggu proses ekstrak selesai.
-5. **Reboot**.
+3. Pilih menu **Modules** -> **Install from storage**
+4. Pilih zip module tersebut dan tunggu proses ekstrak selesai
+5. **Reboot**
 
 ---
 
